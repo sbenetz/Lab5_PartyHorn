@@ -5,11 +5,11 @@ var audio = document.getElementById("horn-sound");
 
 //volume input by number 
 var volume_num = document.getElementById("volume-number");
-volume_num.addEventListener('change',change_volume(volume_num.value));
+volume_num.addEventListener("change", change_volume(volume_num.value));
 
 //volume input by slider
 var volume_slide = document.getElementById("volume-slider");
-volume_slide.addEventListener('change', change_volume(volume_slide.value));
+volume_slide.addEventListener("change", change_volume(volume_slide.value));
 
 function change_volume(num){
     if(num > 100){
@@ -30,7 +30,7 @@ function change_volume(num){
 }
 //play sound
 var honk = document.getElementById("honk-btn");
-honk.addEventListener('submit', function(){
+honk.addEventListener("submit", function(){
     if(audio.volume != 0){
         audio.play();
     }
