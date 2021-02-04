@@ -19,6 +19,7 @@ function changeVolume(num){
         audios.volume = 1;
         volumeSlide.value = 100;
         volumeNum.value = 100;
+        honk.disabled = false;
     }
     else if (num < 0) {
         audios.volume = 0;
@@ -29,6 +30,7 @@ function changeVolume(num){
         audios.volume = num*0.01;
         volumeSlide.value = num;
         volumeNum.value = num;
+        honk.disabled = false;
     }
     if(num > 66){
         volImage.src = "./assets/media/icons/volume-level-3.svg";
@@ -41,6 +43,7 @@ function changeVolume(num){
     }
     if(num <= 0 ){
         volImage.src = "./assets/media/icons/volume-level-0.svg";
+        honk.disabled = true;
     }
 }
     
@@ -48,9 +51,7 @@ function changeVolume(num){
 var honk = document.getElementById("honk-btn");
 honk.addEventListener("click", function(event){
     event.preventDefault();
-    if(audios.volume != 0){
-        audios.play();
-    }  
+    audios.play();  
 });
 
 //audio selector
